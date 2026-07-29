@@ -1,0 +1,15 @@
+import LinkageCompleteIntersectionsDeterminantalIdealsTheoremCanonicalLaneLean.GateLemmas
+import LinkageCompleteIntersectionsDeterminantalIdealsTheoremCanonicalLaneLean.CompleteIntersectionBridge
+
+namespace HautevilleHouse
+namespace LinkageCompleteIntersectionsDeterminantalIdealsTheoremCanonicalLaneLean
+
+def ConstrainedLinkageClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_linkage_endgame (A : AdmissibleClass) :
+    ConstrainedLinkageClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end LinkageCompleteIntersectionsDeterminantalIdealsTheoremCanonicalLaneLean
+end HautevilleHouse
